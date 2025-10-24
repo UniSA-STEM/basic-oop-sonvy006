@@ -31,5 +31,26 @@ class Rig:
     def is_broken(self):
         return self.__broken
 
+    def get_hit(self):
+        self.__damage += 1
+        print(f"Total Damage taken by {self.__name} is {self.__damage}")
+        if self.__damage >= 2 and self.__damage == 0:
+            self.__broken = True
+            print(f"{self.__name} was broken.")
 
+    def repair(self):
+        if self.__broken:
+            self.__damage = 0
+            self.__broken = False
+            print(f"Repaired {self.__name}.")
+        else:
+            print(f"Repair for {self.__name} is not needed.")
+
+    def add_asset(self, asset):
+        self.__storage.append(asset)
+        print(f"Asset added to {self.__name}.")
+
+    def upgrade(self):
+        self.__level += 1
+        print(f"Upgraded {self.__name} to {self.__level}.")
 
