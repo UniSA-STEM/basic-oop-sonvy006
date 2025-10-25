@@ -60,3 +60,12 @@ class Hacker:
         else:
             print(f"No Rig has been upgraded by:{self.__name}.")
 
+    def attack(self, target_hacker):
+        if self.__rig and target_hacker.get_rig():
+            print(f"Attack has been launched by:{self.__name} on {target_hacker.get_name()}!")
+            self.__trace += 1
+            target_hacker.get_rig().get_hit()
+        else:
+            print(f"No Attack has been launched by: One of the hackers has no rig!")
+
+
