@@ -20,5 +20,16 @@ hacker2.acquire_rig()
 
 hacker1.upgrade_rig()
 
+hacker1.encrypt_asset()
+hacker2.decrypt_asset()
+
+hacker1.attack(hacker2)
+hacker1.attack(hacker2)
+
+hacker2.get_rig().repair()
+
+print(hacker1)
+print(hacker2)
+
 
 
