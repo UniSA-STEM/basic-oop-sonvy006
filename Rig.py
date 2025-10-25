@@ -34,7 +34,7 @@ class Rig:
     def get_hit(self):
         self.__damage += 1
         print(f"Total Damage taken by {self.__name} is {self.__damage}")
-        if self.__damage >= 2 and self.__damage == 0:
+        if self.__damage >= 2 and self.__level == 0:
             self.__broken = True
             print(f"{self.__name} was broken.")
 
