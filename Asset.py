@@ -32,3 +32,9 @@ class Asset:
             print(f"Encrypted {self.__name}")
         else:
             print(f"{self.__name} was already encrypted.")
+
+    def __str__(self):
+        if self.__encrypted:
+            return f"{self.__name} was described as '{self.__description}' and is encrypted."
+        else:
+            return f"{self.__name} was described as '{self.__description}' and is not encrypted."
