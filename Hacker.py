@@ -40,3 +40,22 @@ class Hacker:
         else:
             print(f"No Assets for {self.__name} to encrypt.")
 
+    def acquire_rig(self):
+        token = None
+        for item in self.__inventory:
+            if item.get_name() == "CryptoToken":
+                token = item
+
+        if token:
+            self.__inventory.remove(token)
+            self.__rig = Rig(f"{self.__name}'s Rig")
+            print(f"Rig has been acquired by:{self.__name}.")
+        else:
+            print(f"No Rig has been acquired by:{self.__name} due to lack of CryptoTokens.")
+
+    def upgrade_rig(self):
+        if self.__rig:
+            self.__rig.upgrade()
+        else:
+            print(f"No Rig has been upgraded by:{self.__name}.")
+
