@@ -25,7 +25,7 @@ class Rig:
     def get_level(self):
         return self.__level
 
-    def  get_storage(self):
+    def get_storage(self):
         return self.__storage
 
     def is_broken(self):
@@ -54,3 +54,12 @@ class Rig:
         self.__level += 1
         print(f"Upgraded {self.__name} to {self.__level}.")
 
+    def __str__(self):
+        assets= ','.join([a.get_name() for a in self.__storage])
+        status = "Broken " if self.__broken else "Working"
+        return (
+            f"Rig '{self.__name}' is {status}.\n"
+            f"Level: {self.__level}.\n"
+            f"Damage: {self.__damage}.\n"
+            f"Stored Assets: {assets}.\n"
+        )
