@@ -27,3 +27,16 @@ class Hacker:
 
     def get_trace(self):
         return self.__trace
+
+    def decrypt_asset(self):
+        if len(self.__inventory) > 0:
+            self.__inventory[0].decrypt()
+        else:
+            print(f"No Assets for {self.__name} to decrypt.")
+
+    def encrypt_asset(self):
+        if len(self.__inventory) > 0:
+            self.__inventory[0].encrypt()
+        else:
+            print(f"No Assets for {self.__name} to encrypt.")
+
