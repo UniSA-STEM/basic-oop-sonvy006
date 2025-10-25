@@ -67,3 +67,13 @@ class Hacker:
             target_hacker.get_rig().get_hit()
         else:
             print(f"No Attack has been launched by: One of the hackers has no rig!")
+
+    def __str__(self):
+        rig_name = self.__rig.get_name() if self.__rig else "No Rig"
+        inventory_items = ', '.join([a.get_name() for a in self.__inventory]) or "No Items"
+        return(
+            f"Hacker: {self.__name}\n"
+            f"Rig: {rig_name}\n"
+            f"Trace level: {self.__trace}\n"
+            f"Inventory: {inventory_items}"
+        )
