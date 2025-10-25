@@ -15,5 +15,10 @@ hacker2 = Hacker("ErrorDestroyer")
 print(hacker1)
 print(hacker2)
 
+hacker1.acquire_rig()
+hacker2.acquire_rig()
+
+hacker1.upgrade_rig()
+
 
 
